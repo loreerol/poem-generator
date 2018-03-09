@@ -19,7 +19,7 @@ let wordForPoems = [
             {word: `plagues`, value: `fv`, type: `noun`},
             {word: `cigarettes`, value: `fv`, type:`noun`},
             {word: `streetlight`, value: `fv`, type: `noun`},
-            {word: `waiitress`, value: `fv`, type:`noun`},
+            {word: `waitress`, value: `fv`, type:`noun`},
             {word: `gravel`, value: `fv`, type:`noun`},
             {word: `echos`, value: `fv`, type:`noun`},
             {word: `cocktails`, value: `fv`, type:`noun`},
@@ -113,21 +113,22 @@ let wordForPoems = [
 let offered = [];
 let selected = [];
 
-const numberOffered = 12;
+const numberOffered = 13;
 
 //Select 12 words from list of words
+
 
 function initialOffering(){
     for (var i = 0; i < numberOffered; i++) {
     const randomIndex = Math.floor(Math.random() * wordForPoems.length)
-    offered.push(wordForPoems[randomIndex])
+    offered.push(wordForPoems[randomIndex]);
+    wordForPoems.splice(randomIndex,1);
     console.log(offered);
     }
 };
 
 initialOffering();
 //display offered to the user
-
 
 
 //display the 12 words to the user
