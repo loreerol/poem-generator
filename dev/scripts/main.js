@@ -120,21 +120,35 @@ const numberOffered = 13;
 
 function initialOffering(){
     for (var i = 0; i < numberOffered; i++) {
-    const randomIndex = Math.floor(Math.random() * wordForPoems.length)
-    offered.push(wordForPoems[randomIndex]);
-    wordForPoems.splice(randomIndex,1);
-    console.log(offered);
+        const randomIndex = Math.floor(Math.random() * wordForPoems.length)
+        offered.push(wordForPoems[randomIndex]);
+        wordForPoems.splice(randomIndex,1);
     }
 };
 
 initialOffering();
+console.log(offered);
+
+
 //display offered to the user
+//map through the array
+//join it to a button string
+//join all button strings and add them to the html
+function displayWords(){
+    $(`.main`).html(
+    offered.map((wordData) =>`<button id='btn' class='${wordData.word}'> ${wordData.word} </button>`).join(``));
+};
+displayWords();
 
-
-//display the 12 words to the user
-
-//user selects 3 words, remove selected words from offered and put in "selected"
-
+//user clicks words
+//display clicked styling on clicked words
+//add word to new array
+//if user has clicked 4 words, disable unclicked buttons
+//push objects containg clicked word to selected
+document.getElementById("btn").addEventListener("click"({ 
+    $("btn").addClass("clicked");
+}); 
+                                                
 //check which value is the most common in selected
 
 //

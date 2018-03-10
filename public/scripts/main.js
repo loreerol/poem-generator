@@ -56,17 +56,25 @@ function initialOffering() {
         var randomIndex = Math.floor(Math.random() * wordForPoems.length);
         offered.push(wordForPoems[randomIndex]);
         wordForPoems.splice(randomIndex, 1);
-        console.log(offered);
     }
 };
 
 initialOffering();
+console.log(offered);
+
 //display offered to the user
-
-
-//display the 12 words to the user
+//map through the array
+//join it to a button string
+//join all button strings and add them to the html
+function displayWords() {
+    $(".main").html(offered.map(function (wordData) {
+        return "<button id='btn' class='" + wordData.word + "'> " + wordData.word + " </button>";
+    }).join(""));
+};
+displayWords();
 
 //user selects 3 words, remove selected words from offered and put in "selected"
+document.getElementById("").addEventListener("click", displayDate);
 
 //check which value is the most common in selected
 
