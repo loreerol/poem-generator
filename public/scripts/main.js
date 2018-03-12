@@ -17,6 +17,7 @@ function initialOffering() {
         offered.push(wordForPoems[randomIndex]);
         wordForPoems.splice(randomIndex, 1);
     }
+    displayWords();
 };
 
 initialOffering();
@@ -29,27 +30,41 @@ function displayWords() {
     $(".main").html(offered.map(function (wordData) {
         return "<button id='btn' class='" + wordData.word + "'> " + wordData.word + " </button>";
     }).join(""));
+    clickTheWords();
 };
-displayWords();
 
 //user clicks words
-$('button').click(function (e) {
-    var word = this.classList[0];
-    //display clicked styling on clicked words
-    $(this).addClass("clicked");
-    //if user has clicked 4 words, disable unclicked buttons
-    var clickedButton = document.getElementsByClassName("clicked");
-    if (clickedButton.length > 3) {
-        console.log("ok");
-        //once 4 are selected, remove unclicked words from array
-    }
-});
+function clickTheWords() {
+    $('button').click(function (e) {
+        var selectedWord = this.classList[0];
+        var obj = $.grep(offered, function (obj) {
+            return obj.word === selectedWord;
+        })[0];
+        //display clicked styling on clicked words
+        $(this).addClass("clicked");
+        //if user has clicked 4 words, disable unclicked buttons
+        var clickedButton = document.getElementsByClassName("clicked");
+        if (clickedButton.length < 4) {
+            selected.push(obj);
+            console.log(selected);
+            //once 4 are selected, push them to selected, delete content from offered
+        } else {
+            offered.splice(0, offered.length);
+            //remove buttons from html to reset
+            $('.main').html('');
 
-//function refreshWords(){
-//let clickedButton = document.getElementsByClassName("clicked");
-//    console.log(clickedButton.length);
-//};
-//
-//refreshWords();
+            initialOffering();
+        }
+    });
+};
+console.log(selected);
 
-//push objects containg clicked word to selected
+//select random poem madlib parts
+
+//check to see how many of each word type are needed, if it doesnt have enough, offer a random selection of that type
+
+//put words into madlib
+
+//show poem
+
+//buttons for sharing and downloading poem

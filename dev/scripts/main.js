@@ -86,6 +86,7 @@ function initialOffering(){
         offered.push(wordForPoems[randomIndex]);
         wordForPoems.splice(randomIndex,1);
     }
+    displayWords();
 };
 
 initialOffering();
@@ -97,31 +98,41 @@ initialOffering();
 function displayWords(){
     $(`.main`).html(
     offered.map((wordData) =>`<button id='btn' class='${wordData.word}'> ${wordData.word} </button>`).join(``));
+    clickTheWords();
 };
-displayWords();
 
 //user clicks words
+function clickTheWords(){
 $('button').click(function(e) {
-    let word = this.classList[0];
+    let selectedWord = this.classList[0];
+    let obj = $.grep(offered, function(obj){return obj.word === selectedWord;})[0];
 //display clicked styling on clicked words
     $(this).addClass("clicked");
 //if user has clicked 4 words, disable unclicked buttons
     let clickedButton = document.getElementsByClassName("clicked");
-    if (clickedButton.length > 3){
-       console.log("ok");
-//once 4 are selected, remove unclicked words from array
-        
-   } 
+    if (clickedButton.length < 4){
+        selected.push(obj);
+        console.log(selected);
+    //once 4 are selected, push them to selected, delete content from offered
+   }else{
+    offered.splice(0, offered.length);
+//remove buttons from html to reset
+       $('.main').html('');
+       
+       initialOffering();
+   }
     
 });
+};
+console.log(selected);
 
+//select random poem madlib parts
 
-//function refreshWords(){
-//let clickedButton = document.getElementsByClassName("clicked");
-//    console.log(clickedButton.length);
-//};
-//
-//refreshWords();
+//check to see how many of each word type are needed, if it doesnt have enough, offer a random selection of that type
 
-//push objects containg clicked word to selected 
+//put words into madlib
+
+//show poem
+
+//buttons for sharing and downloading poem
 
