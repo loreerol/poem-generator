@@ -205,7 +205,12 @@ button {
   background-color: #dbd7af;
   font-family: 'Source Code Pro', monospace;
   text-transform: uppercase;
-  color: red; }
+  color: red;
+  outline: none; }
 
 button:hover {
   border: 3px solid red; }
+
+.clicked {
+  background-color: red;
+  color: #dbd7af; }

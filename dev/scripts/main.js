@@ -1,19 +1,6 @@
 //poem generator
 
-//"use strict";
-
-//4 words randomly selected from each of the three value lists.
-//user selects 4 words from 12 offered.  
-    //remove these words from each list so they don't get resused later.
-    //add these words to an object of selected words
-//check to see which value has been selected the most
-//offer a new list of 12 words made of 7 of the common value, the other 5 are random from all lists
-//repeat the last step, offering 12 more words
-//check value array again to see which value is the most common, now out of 9 words chosen, use this to choose a poem type.
-//types are Free Verse, Sonnet and Limerick
-//
-//
-
+"use strict";
 
 let wordForPoems = [
             {word: `plagues`, value: `fv`, type: `noun`},
@@ -86,37 +73,12 @@ let wordForPoems = [
             {word: `pink`, value: `s`, type:`adjective`},
 ];
 
-//let limerickWords = {[
-//    {word: ``, value: `l`, type:``},
-//    {word: ``, value: `l`, type:``},
-//    {word: ``, value: `l`, type:``},
-//    {word: ``, value: `l`, type:``},
-//    {word: ``, value: `l`, type:``},
-//    {word: ``, value: `l`, type:``},
-//    {word: ``, value: `l`, type:``},
-//    {word: ``, value: `l`, type:``},
-//    {word: ``, value: `l`, type:``},
-//    {word: ``, value: `l`, type:``},
-//    {word: ``, value: `l`, type:``},
-//    {word: ``, value: `l`, type:``},
-//    {word: ``, value: `l`, type:``},
-//    {word: ``, value: `l`, type:``},
-//    {word: ``, value: `l`, type:``},
-//    {word: ``, value: `l`, type:``},
-//    {word: ``, value: `l`, type:``},
-//    {word: ``, value: `l`, type:``},
-//    {word: ``, value: `l`, type:``},
-//    {word: ``, value: `l`, type:``}
-//                    }];
-
-
 let offered = [];
 let selected = [];
 
 const numberOffered = 13;
 
 //Select 12 words from list of words
-
 
 function initialOffering(){
     for (var i = 0; i < numberOffered; i++) {
@@ -127,13 +89,11 @@ function initialOffering(){
 };
 
 initialOffering();
-console.log(offered);
 
-
-//display offered to the user
-//map through the array
-//join it to a button string
-//join all button strings and add them to the html
+//display 12 words to the user
+    //map through the array
+    //join it to a button string
+    //join all button strings and add them to the html
 function displayWords(){
     $(`.main`).html(
     offered.map((wordData) =>`<button id='btn' class='${wordData.word}'> ${wordData.word} </button>`).join(``));
@@ -141,14 +101,27 @@ function displayWords(){
 displayWords();
 
 //user clicks words
+$('button').click(function(e) {
+    let word = this.classList[0];
 //display clicked styling on clicked words
-//add word to new array
+    $(this).addClass("clicked");
 //if user has clicked 4 words, disable unclicked buttons
-//push objects containg clicked word to selected
-document.getElementById("btn").addEventListener("click"({ 
-    $("btn").addClass("clicked");
-}); 
-                                                
-//check which value is the most common in selected
+    let clickedButton = document.getElementsByClassName("clicked");
+    if (clickedButton.length > 3){
+       console.log("ok");
+//once 4 are selected, remove unclicked words from array
+        
+   } 
+    
+});
 
+
+//function refreshWords(){
+//let clickedButton = document.getElementsByClassName("clicked");
+//    console.log(clickedButton.length);
+//};
 //
+//refreshWords();
+
+//push objects containg clicked word to selected 
+

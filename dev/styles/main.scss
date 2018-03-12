@@ -60,6 +60,7 @@ button{
     font-family: 'Source Code Pro', monospace;
      text-transform: uppercase;
     color: red;
+    outline: none;
 }
 
 button:hover{
@@ -67,5 +68,6 @@ button:hover{
 }
 
 .clicked{
-    background-color: black;
+    background-color: red;
+    color: #dbd7af;
 }
