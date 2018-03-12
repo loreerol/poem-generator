@@ -36,6 +36,8 @@ function displayWords() {
 //user clicks words
 function clickTheWords() {
     $('button').click(function (e) {
+        var i = 1;
+        i = i++;
         var selectedWord = this.classList[0];
         var obj = $.grep(offered, function (obj) {
             return obj.word === selectedWord;
@@ -44,7 +46,7 @@ function clickTheWords() {
         $(this).addClass("clicked");
         //if user has clicked 4 words, disable unclicked buttons
         var clickedButton = document.getElementsByClassName("clicked");
-        if (clickedButton.length < 4) {
+        if (clickedButton.length < 4 && i < 2) {
             selected.push(obj);
             console.log(selected);
             //once 4 are selected, push them to selected, delete content from offered
@@ -52,7 +54,6 @@ function clickTheWords() {
             offered.splice(0, offered.length);
             //remove buttons from html to reset
             $('.main').html('');
-
             initialOffering();
         }
     });
