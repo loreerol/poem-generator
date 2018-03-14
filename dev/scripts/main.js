@@ -98,38 +98,65 @@ initialOffering();
 function displayWords(){
     $(`.main`).html(
     offered.map((wordData) =>`<button id='btn' class='${wordData.word}'> ${wordData.word} </button>`).join(``));
-    clickTheWords();
 };
 
 //user clicks words
 function clickTheWords(){
-$('button').click(function(e) {
-    let i = 1;
-    i = i++;
+    let i = 0;
+$(document).on('click', 'button', function(e) {
     let selectedWord = this.classList[0];
     let obj = $.grep(offered, function(obj){return obj.word === selectedWord;})[0];
 //display clicked styling on clicked words
     $(this).addClass("clicked");
 //if user has clicked 4 words, disable unclicked buttons
     let clickedButton = document.getElementsByClassName("clicked");
-    if (clickedButton.length < 4 && i < 2){
+    console.log('hello', clickedButton.length)
+    if (clickedButton.length <= 3){
         selected.push(obj);
-        console.log(selected);
     //once 4 are selected, push them to selected, delete content from offered
-   }else{
-    offered.splice(0, offered.length);
-//remove buttons from html to reset
-       $('.main').html(''); 
-       initialOffering();
    }
-    
+    else{
+        i++;
+    endOfCycle(obj, i); 
+   }
 });
 };
+
+function endOfCycle(obj, i){
+       console.log('clearing...')
+       selected.push(obj);
+       if(i < 3){
+              offered.splice(0, offered.length);
+//remove buttons from html to reset
+       $('.main').html(''); 
+       initialOffering(); 
+       } else{
+           $('.main').html(''); 
+           console.log(selected);
+       }
+}
 console.log(selected);
 
+clickTheWords();
 //select random poem madlib parts
 
+let nounList = [];
+let verbList = [];
+let adjectiveList = [];
+
+//function organizeWords(){
+//    
+//    
+//}
+//let noun = nounList.[randomID];
+//let verb = verbList.[randomID];
+//let adjective = adjectiveList.[randomID];
+
+
+let fvMadlibs1 = `The ${noun} ${verb} to a ${adjective} clearing on the far side of the ${noun}. An ${adjective} ${noun} sat in the ${adjective} ${noun}. It was ${adjective}—he hardly knew the difference`;
+
 //check to see how many of each word type are needed, if it doesnt have enough, offer a random selection of that type
+
 
 //put words into madlib
 

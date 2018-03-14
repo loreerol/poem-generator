@@ -1,0 +1,32 @@
+<html>
+<body>
+<head></head>  
+<script src='https://code.jquery.com/jquery-3.2.1.min.js' integrity='sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4='crossorigin='anonymous'></script>
+<script>
+    const getPokemon = (id) =>{
+        return $.ajax({
+            url: `https://pokeapi.co/api/v2/pokemon/${id}`,
+            method: 'GET',
+            dataType: 'json'
+        });
+    }
+    const getType = (name) =>{
+        console.log(name);
+       return $.ajax({
+            url: `https://pokeapi.co/api/v2/type/${name}`,
+            method: 'GET',
+            dataType: 'json'
+        });
+    }
+    async function getData(){
+        const firstPokemon = await getPokemon(1);
+        const type = await getType(firstPokemon.types[0].type.name);
+        console.log(type);
+    }
+    
+    getData();
+    
+    
+</script>
+</body>
+</html>

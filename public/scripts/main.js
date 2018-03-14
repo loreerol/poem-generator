@@ -2,7 +2,7 @@
 
 "use strict";
 
-var wordForPoems = [{ word: "plagues", value: "fv", type: "noun" }, { word: "cigarettes", value: "fv", type: "noun" }, { word: "streetlight", value: "fv", type: "noun" }, { word: "waitress", value: "fv", type: "noun" }, { word: "gravel", value: "fv", type: "noun" }, { word: "echos", value: "fv", type: "noun" }, { word: "cocktails", value: "fv", type: "noun" }, { word: "hands", value: "fv", type: "noun" }, { word: "misanthrope", value: "fv", type: "noun" }, { word: "drugs", value: "fv", type: "noun" }, { word: "dust", value: "fv", type: "noun" }, { word: "hammer", value: "fv", type: "noun" }, { word: "highway", value: "fv", type: "noun" }, { word: "liquor", value: "fv", type: "noun" }, { word: "moonlight", value: "fv", type: "noun" }, { word: "fortress", value: "fv", type: "noun" }, { word: "backyard", value: "fv", type: "noun" }, { word: "sublime", value: "fv", type: "adjective" }, { word: "criminal", value: "fv", type: "adjective" }, { word: "indiscriminate", value: "fv", type: "adjective" }, { word: "cruel", value: "fv", type: "adjective" }, { word: "supine", value: "fv", type: "adjective" }, { word: "unborn", value: "fv", type: "adjective" }, { word: "sanguine", value: "fv", type: "adjective" }, { word: "eternal", value: "fv", type: "adjective" }, { word: "nuclear", value: "fv", type: "adjective" }, { word: "dumb", value: "fv", type: "adjective" }, { word: "rough", value: "fv", type: "adjective" }, { word: "recreational", value: "fv", type: "adjective" }, { word: "sad", value: "fv", type: "adjective" }, { word: "unemployed", value: "fv", type: "adjective" }, { word: "irredecent", value: "fv", type: "adjective" }, { word: "empty", value: "fv", type: "adjective" }, { word: "quavers", value: "fv", type: "verb" }, { word: "hesitate", value: "fv", type: "verb" }, { word: "decipher", value: "fv", type: "verb" }, { word: "mothering", value: "fv", type: "verb" }, { word: "tearing", value: "fv", type: "verb" }, { word: "twinkling", value: "fv", type: "verb" }, { word: "feasting", value: "fv", type: "verb" }, { word: "dumped", value: "fv", type: "verb" }, { word: "admitting", value: "fv", type: "verb" }, { word: "remember", value: "fv", type: "verb" }, { word: "galloping", value: "fv", type: "verb" }, { word: "wandering", value: "fv", type: "verb" }, { word: "plough", value: "fv", type: "verb" }, { word: "digitally", value: "fv", type: "verb" }, { word: "calculating", value: "fv", type: "verb" }, { word: "love", value: "s", type: "noun" }, { word: "soul", value: "s", type: "noun" }, { word: "breath", value: "s", type: "noun" }, { word: "tenderness", value: "s", type: "noun" }, { word: "stars", value: "s", type: "noun" }, { word: "eyes", value: "s", type: "noun" }, { word: "desire", value: "s", type: "noun" }, { word: "roses", value: "s", type: "noun" }, { word: "waiting", value: "s", type: "noun" }, { word: "cheak", value: "s", type: "noun" }, { word: "longing", value: "s", type: "noun" }, { word: "passionately", value: "s", type: "adjective" }, { word: "heavenly", value: "s", type: "adjective" }, { word: "sweet", value: "s", type: "adjective" }, { word: "aching", value: "s", type: "adjective" }, { word: "unaware", value: "s", type: "adjective" }, { word: "luscious", value: "s", type: "adjective" }, { word: "fragrant", value: "s", type: "adjective" }, { word: "red", value: "s", type: "adjective" }, { word: "pink", value: "s", type: "adjective" }];
+var wordForPoems = [{ word: 'plagues', value: 'fv', type: 'noun' }, { word: 'cigarettes', value: 'fv', type: 'noun' }, { word: 'streetlight', value: 'fv', type: 'noun' }, { word: 'waitress', value: 'fv', type: 'noun' }, { word: 'gravel', value: 'fv', type: 'noun' }, { word: 'echos', value: 'fv', type: 'noun' }, { word: 'cocktails', value: 'fv', type: 'noun' }, { word: 'hands', value: 'fv', type: 'noun' }, { word: 'misanthrope', value: 'fv', type: 'noun' }, { word: 'drugs', value: 'fv', type: 'noun' }, { word: 'dust', value: 'fv', type: 'noun' }, { word: 'hammer', value: 'fv', type: 'noun' }, { word: 'highway', value: 'fv', type: 'noun' }, { word: 'liquor', value: 'fv', type: 'noun' }, { word: 'moonlight', value: 'fv', type: 'noun' }, { word: 'fortress', value: 'fv', type: 'noun' }, { word: 'backyard', value: 'fv', type: 'noun' }, { word: 'sublime', value: 'fv', type: 'adjective' }, { word: 'criminal', value: 'fv', type: 'adjective' }, { word: 'indiscriminate', value: 'fv', type: 'adjective' }, { word: 'cruel', value: 'fv', type: 'adjective' }, { word: 'supine', value: 'fv', type: 'adjective' }, { word: 'unborn', value: 'fv', type: 'adjective' }, { word: 'sanguine', value: 'fv', type: 'adjective' }, { word: 'eternal', value: 'fv', type: 'adjective' }, { word: 'nuclear', value: 'fv', type: 'adjective' }, { word: 'dumb', value: 'fv', type: 'adjective' }, { word: 'rough', value: 'fv', type: 'adjective' }, { word: 'recreational', value: 'fv', type: 'adjective' }, { word: 'sad', value: 'fv', type: 'adjective' }, { word: 'unemployed', value: 'fv', type: 'adjective' }, { word: 'irredecent', value: 'fv', type: 'adjective' }, { word: 'empty', value: 'fv', type: 'adjective' }, { word: 'quavers', value: 'fv', type: 'verb' }, { word: 'hesitate', value: 'fv', type: 'verb' }, { word: 'decipher', value: 'fv', type: 'verb' }, { word: 'mothering', value: 'fv', type: 'verb' }, { word: 'tearing', value: 'fv', type: 'verb' }, { word: 'twinkling', value: 'fv', type: 'verb' }, { word: 'feasting', value: 'fv', type: 'verb' }, { word: 'dumped', value: 'fv', type: 'verb' }, { word: 'admitting', value: 'fv', type: 'verb' }, { word: 'remember', value: 'fv', type: 'verb' }, { word: 'galloping', value: 'fv', type: 'verb' }, { word: 'wandering', value: 'fv', type: 'verb' }, { word: 'plough', value: 'fv', type: 'verb' }, { word: 'digitally', value: 'fv', type: 'verb' }, { word: 'calculating', value: 'fv', type: 'verb' }, { word: 'love', value: 's', type: 'noun' }, { word: 'soul', value: 's', type: 'noun' }, { word: 'breath', value: 's', type: 'noun' }, { word: 'tenderness', value: 's', type: 'noun' }, { word: 'stars', value: 's', type: 'noun' }, { word: 'eyes', value: 's', type: 'noun' }, { word: 'desire', value: 's', type: 'noun' }, { word: 'roses', value: 's', type: 'noun' }, { word: 'waiting', value: 's', type: 'noun' }, { word: 'cheak', value: 's', type: 'noun' }, { word: 'longing', value: 's', type: 'noun' }, { word: 'passionately', value: 's', type: 'adjective' }, { word: 'heavenly', value: 's', type: 'adjective' }, { word: 'sweet', value: 's', type: 'adjective' }, { word: 'aching', value: 's', type: 'adjective' }, { word: 'unaware', value: 's', type: 'adjective' }, { word: 'luscious', value: 's', type: 'adjective' }, { word: 'fragrant', value: 's', type: 'adjective' }, { word: 'red', value: 's', type: 'adjective' }, { word: 'pink', value: 's', type: 'adjective' }];
 
 var offered = [];
 var selected = [];
@@ -27,17 +27,15 @@ initialOffering();
 //join it to a button string
 //join all button strings and add them to the html
 function displayWords() {
-    $(".main").html(offered.map(function (wordData) {
-        return "<button id='btn' class='" + wordData.word + "'> " + wordData.word + " </button>";
-    }).join(""));
-    clickTheWords();
+    $('.main').html(offered.map(function (wordData) {
+        return '<button id=\'btn\' class=\'' + wordData.word + '\'> ' + wordData.word + ' </button>';
+    }).join(''));
 };
 
 //user clicks words
 function clickTheWords() {
-    $('button').click(function (e) {
-        var i = 1;
-        i = i++;
+    var i = 0;
+    $(document).on('click', 'button', function (e) {
         var selectedWord = this.classList[0];
         var obj = $.grep(offered, function (obj) {
             return obj.word === selectedWord;
@@ -46,23 +44,52 @@ function clickTheWords() {
         $(this).addClass("clicked");
         //if user has clicked 4 words, disable unclicked buttons
         var clickedButton = document.getElementsByClassName("clicked");
-        if (clickedButton.length < 4 && i < 2) {
+        console.log('hello', clickedButton.length);
+        if (clickedButton.length <= 3) {
             selected.push(obj);
-            console.log(selected);
             //once 4 are selected, push them to selected, delete content from offered
         } else {
-            offered.splice(0, offered.length);
-            //remove buttons from html to reset
-            $('.main').html('');
-            initialOffering();
+            i++;
+            endOfCycle(obj, i);
         }
     });
 };
+
+function endOfCycle(obj, i) {
+    console.log('clearing...');
+    selected.push(obj);
+    if (i < 3) {
+        offered.splice(0, offered.length);
+        //remove buttons from html to reset
+        $('.main').html('');
+        initialOffering();
+    } else {
+        $('.main').html('');
+        console.log(selected);
+    }
+}
 console.log(selected);
 
+clickTheWords();
 //select random poem madlib parts
 
+var nounList = [];
+var verbList = [];
+var adjectiveList = [];
+
+//function organizeWords(){
+//    
+//    
+//}
+//let noun = nounList.[randomID];
+//let verb = verbList.[randomID];
+//let adjective = adjectiveList.[randomID];
+
+
+var fvMadlibs1 = 'The ' + noun + ' ' + verb + ' to a ' + adjective + ' clearing on the far side of the ' + noun + '. An ' + adjective + ' ' + noun + ' sat in the ' + adjective + ' ' + noun + '. It was ' + adjective + '\u2014he hardly knew the difference';
+
 //check to see how many of each word type are needed, if it doesnt have enough, offer a random selection of that type
+
 
 //put words into madlib
 
