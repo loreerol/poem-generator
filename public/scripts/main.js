@@ -44,7 +44,6 @@ function clickTheWords() {
         $(this).addClass("clicked");
         //if user has clicked 4 words, disable unclicked buttons
         var clickedButton = document.getElementsByClassName("clicked");
-        console.log('hello', clickedButton.length);
         if (clickedButton.length <= 3) {
             selected.push(obj);
             //once 4 are selected, push them to selected, delete content from offered
@@ -56,7 +55,6 @@ function clickTheWords() {
 };
 
 function endOfCycle(obj, i) {
-    console.log('clearing...');
     selected.push(obj);
     if (i < 3) {
         offered.splice(0, offered.length);
@@ -66,6 +64,25 @@ function endOfCycle(obj, i) {
     } else {
         $('.main').html('');
         console.log(selected);
+        var nounList = selected.filter(function (val) {
+            return val.type === "noun";
+        });
+        var verbList = selected.filter(function (val) {
+            return val.type === "verb";
+        });
+        var adjectiveList = selected.filter(function (val) {
+            return val.type === "adjective";
+
+            var noun = nounList[Math.floor(Math.random() * items.length)];
+            var verb = verbList[Math.floor(Math.random() * items.length)];
+            var adjective = adjectiveList[Math.floor(Math.random() * items.length)];
+        });
+        console.log(nounList);
+        console.log(verbList);
+        console.log(adjectiveList);
+        var fvMadlibs1 = 'The ' + noun + ' ' + verb + ' to a ' + adjective + ' clearing on the far side of the ' + noun + '. An ' + adjective + ' ' + noun + ' sat in the ' + adjective + ' ' + noun + '. It was ' + adjective + '\u2014he hardly knew the difference';
+
+        console.log(fvMadlibs1);
     }
 }
 console.log(selected);
@@ -73,20 +90,14 @@ console.log(selected);
 clickTheWords();
 //select random poem madlib parts
 
-var nounList = [];
-var verbList = [];
-var adjectiveList = [];
 
-//function organizeWords(){
-//    
-//    
-//}
-//let noun = nounList.[randomID];
+//let noun = nounList[Math.floor(Math.random()*items.length)];;
 //let verb = verbList.[randomID];
 //let adjective = adjectiveList.[randomID];
 
 
-var fvMadlibs1 = 'The ' + noun + ' ' + verb + ' to a ' + adjective + ' clearing on the far side of the ' + noun + '. An ' + adjective + ' ' + noun + ' sat in the ' + adjective + ' ' + noun + '. It was ' + adjective + '\u2014he hardly knew the difference';
+//let fvMadlibs1 = `The ${noun} ${verb} to a ${adjective} clearing on the far side of the ${noun}. An ${adjective} ${noun} sat in the ${adjective} ${noun}. It was ${adjective}—he hardly knew the difference`;
+
 
 //check to see how many of each word type are needed, if it doesnt have enough, offer a random selection of that type
 

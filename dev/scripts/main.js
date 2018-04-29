@@ -87,6 +87,7 @@ function initialOffering(){
         wordForPoems.splice(randomIndex,1);
     }
     displayWords();
+
 };
 
 initialOffering();
@@ -110,7 +111,6 @@ $(document).on('click', 'button', function(e) {
     $(this).addClass("clicked");
 //if user has clicked 4 words, disable unclicked buttons
     let clickedButton = document.getElementsByClassName("clicked");
-    console.log('hello', clickedButton.length)
     if (clickedButton.length <= 3){
         selected.push(obj);
     //once 4 are selected, push them to selected, delete content from offered
@@ -123,7 +123,6 @@ $(document).on('click', 'button', function(e) {
 };
 
 function endOfCycle(obj, i){
-       console.log('clearing...')
        selected.push(obj);
        if(i < 3){
               offered.splice(0, offered.length);
@@ -131,8 +130,28 @@ function endOfCycle(obj, i){
        $('.main').html(''); 
        initialOffering(); 
        } else{
-           $('.main').html(''); 
+           $('.main').html('');
            console.log(selected);
+           let nounList = selected.filter(val =>{
+    return val.type === "noun";
+})
+            let verbList = selected.filter(val =>{
+    return val.type === "verb";
+})
+            let adjectiveList = selected.filter(val =>{
+    return val.type === "adjective";
+                
+let noun = nounList[Math.floor(Math.random()*items.length)];
+let verb = verbList[Math.floor(Math.random()*items.length)];
+let adjective = adjectiveList[Math.floor(Math.random()*items.length)];
+
+})
+console.log(nounList);
+console.log(verbList);
+console.log(adjectiveList);
+           let fvMadlibs1 = `The ${noun} ${verb} to a ${adjective} clearing on the far side of the ${noun}. An ${adjective} ${noun} sat in the ${adjective} ${noun}. It was ${adjective}—he hardly knew the difference`;
+           
+           console.log(fvMadlibs1);
        }
 }
 console.log(selected);
@@ -140,20 +159,15 @@ console.log(selected);
 clickTheWords();
 //select random poem madlib parts
 
-let nounList = [];
-let verbList = [];
-let adjectiveList = [];
 
-//function organizeWords(){
-//    
-//    
-//}
-//let noun = nounList.[randomID];
+
+//let noun = nounList[Math.floor(Math.random()*items.length)];;
 //let verb = verbList.[randomID];
 //let adjective = adjectiveList.[randomID];
 
 
-let fvMadlibs1 = `The ${noun} ${verb} to a ${adjective} clearing on the far side of the ${noun}. An ${adjective} ${noun} sat in the ${adjective} ${noun}. It was ${adjective}—he hardly knew the difference`;
+//let fvMadlibs1 = `The ${noun} ${verb} to a ${adjective} clearing on the far side of the ${noun}. An ${adjective} ${noun} sat in the ${adjective} ${noun}. It was ${adjective}—he hardly knew the difference`;
+
 
 //check to see how many of each word type are needed, if it doesnt have enough, offer a random selection of that type
 
